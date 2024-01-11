@@ -1,8 +1,13 @@
 package ar.com.pizzeriaDonConfa.dominio.persona;
 
-import ar.com.pizzeriaDonConfa.enums.CodigoEmpleado;
+import java.util.ArrayList;
 
-public class Empleado extends Persona implements Comparable<Empleado>  {
+import ar.com.pizzeriaDonConfa.dominio.pizzeria.Mesa;
+import ar.com.pizzeriaDonConfa.enums.CodigoEmpleado;
+import ar.com.pizzeriaDonConfa.enums.EstadoMesa;
+import ar.com.pizzeriaDonConfa.interfaces.Responsabilidades;
+
+public class Empleado extends Persona implements Comparable<Empleado>,Responsabilidades  {
 
 	private Integer legajo;
 	private CodigoEmpleado codigoFuncion;
@@ -38,8 +43,39 @@ public class Empleado extends Persona implements Comparable<Empleado>  {
 
 	@Override
 	public int compareTo(Empleado e) {
-		// TODO Auto-generated method stub
+		
 		return this.legajo-e.getLegajo();
+	}
+
+	@Override
+	public Boolean iniciarMesa(Integer numeroDeMesa,ArrayList<Mesa>listadoMesas) {
+		Boolean iniciada=false;
+		for(Mesa m:listadoMesas) {
+			if(m.getNumeroMesa()==numeroDeMesa) {
+				m.setEstadoMesa(EstadoMesa.EN_SERVICIO);
+				iniciada=true;
+			}
+				
+		}
+		return iniciada;
+	}
+
+	@Override
+	public void abrirComanda(Integer numeroDeMesa) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Integer cerrarMesa(Integer numeroDeMesa) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Boolean cobrarComanda(Integer numeroMesa) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
