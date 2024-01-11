@@ -136,9 +136,9 @@ public class MozoTestCases {
 
 		assertNotNull(mesa1);
 	}
-	@Test // #6
+	@Test // #7
 
-	public void queMozoIniciasUnaUnaMesa() {
+	public void queMozoInicieUnaUnaMesa() {
 //		PREPARACION
 		Categoria categoria = Categoria.VINOS;
 		Tipo tipo = Tipo.BEBIDAS, tipo_01 = Tipo.PRINCIPAL, tipo_02 = Tipo.POSTRE;
