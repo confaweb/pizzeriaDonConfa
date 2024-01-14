@@ -4,7 +4,7 @@ import java.util.Objects;
 
 import ar.com.pizzeriaDonConfa.enums.EstadoMesa;
 
-public class Mesa {
+public class Mesa implements Comparable<Mesa> {
 
 	private Integer numeroMesa;
 	private EstadoMesa estadoMesa;
@@ -62,6 +62,12 @@ public class Mesa {
 	public String toString() {
 		return "Mesa [numeroMesa=" + numeroMesa + ", estadoMesa=" + estadoMesa + ", cantidadComensales="
 				+ cantidadComensales + "]";
+	}
+
+	@Override
+	public int compareTo(Mesa m) {
+		
+		return this.numeroMesa-m.getNumeroMesa();
 	}
 
 }

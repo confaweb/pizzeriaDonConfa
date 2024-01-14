@@ -12,7 +12,17 @@ public class Item {
 	protected Tamanio tamanio;
 	protected Tipo tipo;
 
-	
+	public Item(String descripcion2, Tipo tipo2) {
+
+	}
+
+	public Item(String codigoItem, String descripcion, Double precio, Tamanio tamanio, Tipo tipo) {
+		this.codigoItem = codigoItem;
+		this.descripcion = descripcion;
+		this.precio = precio;
+		this.tamanio = tamanio;
+		this.tipo = tipo;
+	}
 
 	public String getDescripcion() {
 		return descripcion;
@@ -54,13 +64,6 @@ public class Item {
 		this.tipo = tipo;
 	}
 
-	public Item(String codigoItem,String descripcion,Double precio,Tamanio tamanio,Tipo tipo) {
-		this.codigoItem=codigoItem;
-		this.descripcion=descripcion;
-		this.precio=precio;
-		this.tamanio=tamanio;
-		this.tipo=tipo;
-	}
 	@Override
 	public int hashCode() {
 		return Objects.hash(codigoItem);
